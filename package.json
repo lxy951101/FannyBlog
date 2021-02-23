@@ -1,0 +1,20 @@
+{
+  "name": "FannyBlog",
+  "version": "0.0.1",
+  "description": "Fanny&#39;s personal website",
+  "main": "index.js",
+  "authors": {
+    "name": "Fanny Li",
+    "email": "ysulixiangyuan@gmail.com"
+  },
+  "repository": "https://github.com/FiggerDancer/FannyBlog",
+  "scripts": {
+    "dev": "vuepress dev blog",
+    "build": "vuepress build blog"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.3.1",
+    "@vuepress/theme-blog": "^2.1.0"
+  }
+}
