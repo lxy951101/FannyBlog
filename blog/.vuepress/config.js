@@ -1,4 +1,5 @@
 module.exports = {
+  base: '/FannyBlog/',
   title: 'Fanny',
   description: 'Web development, Frontend, JavaScript',
   theme: '@vuepress/theme-blog', // OR shortcut: @vuepress/blog
