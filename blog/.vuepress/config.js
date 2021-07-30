@@ -68,4 +68,17 @@ module.exports = {
     ],
     smoothScroll: true
   },
+  markdown: {
+    plugins: ['task-lists'],
+    extendMarkdown: md => {
+      md.use(require('markdown-it-disable-url-encode'));
+    }
+  },
+  configureWebpack: {
+    resolve: {
+      alias: {
+        '@public': 'blog/public'
+      }
+    }
+  }
 }
