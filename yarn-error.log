@@ -40,7 +40,7 @@ npm manifest:
     "scripts": {
       "dev": "vuepress dev blog",
       "build": "vuepress build blog",
-      "publish": "./deploy.sh"
+      "deploy": "./deploy.sh"
     },
     "license": "MIT",
     "devDependencies": {
