@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ES10新特性 | Fanny</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="ES10 还只是一个草案。但是除了 Object.fromEntries 之外，Chrome 的大多数功能都已经实现了。在新的语言特性方面，ES10 不如 ES6 重要，但它确实添加了一些有趣的特性。让我们一起来看一下具体有哪些特性吧。
+
+ES10新特性
+String.matchAll()
+Dynamic import()
+Array.flat().f ...">
+    
+    <link rel="preload" href="/FannyBlog/assets/css/0.styles.21529ff0.css" as="style"><link rel="preload" href="/FannyBlog/assets/js/app.a39f2cab.js" as="script"><link rel="preload" href="/FannyBlog/assets/js/12.2adad98b.js" as="script"><link rel="preload" href="/FannyBlog/assets/js/4.afb47655.js" as="script"><link rel="preload" href="/FannyBlog/assets/js/22.3c8a244d.js" as="script"><link rel="prefetch" href="/FannyBlog/assets/js/10.f3addffd.js"><link rel="prefetch" href="/FannyBlog/assets/js/11.af7341fc.js"><link rel="prefetch" href="/FannyBlog/assets/js/13.a1fdcf46.js"><link rel="prefetch" href="/FannyBlog/assets/js/14.52487cd9.js"><link rel="prefetch" href="/FannyBlog/assets/js/15.17bc06b2.js"><link rel="prefetch" href="/FannyBlog/assets/js/16.37a90da4.js"><link rel="prefetch" href="/FannyBlog/assets/js/17.5ee2851b.js"><link rel="prefetch" href="/FannyBlog/assets/js/18.0c1a0a90.js"><link rel="prefetch" href="/FannyBlog/assets/js/19.27b9f03f.js"><link rel="prefetch" href="/FannyBlog/assets/js/20.91354e90.js"><link rel="prefetch" href="/FannyBlog/assets/js/21.45a42a68.js"><link rel="prefetch" href="/FannyBlog/assets/js/23.d6d20a1a.js"><link rel="prefetch" href="/FannyBlog/assets/js/24.26a5e1b3.js"><link rel="prefetch" href="/FannyBlog/assets/js/25.6890fcd1.js"><link rel="prefetch" href="/FannyBlog/assets/js/26.867b77a7.js"><link rel="prefetch" href="/FannyBlog/assets/js/27.118b4733.js"><link rel="prefetch" href="/FannyBlog/assets/js/28.29956b33.js"><link rel="prefetch" href="/FannyBlog/assets/js/29.f19a06a4.js"><link rel="prefetch" href="/FannyBlog/assets/js/3.63c2d876.js"><link rel="prefetch" href="/FannyBlog/assets/js/30.1e146699.js"><link rel="prefetch" href="/FannyBlog/assets/js/31.ee6a8139.js"><link rel="prefetch" href="/FannyBlog/assets/js/32.92896587.js"><link rel="prefetch" href="/FannyBlog/assets/js/33.bb7b024a.js"><link rel="prefetch" href="/FannyBlog/assets/js/34.20a53656.js"><link rel="prefetch" href="/FannyBlog/assets/js/35.d6f64fb4.js"><link rel="prefetch" href="/FannyBlog/assets/js/36.1be04dc2.js"><link rel="prefetch" href="/FannyBlog/assets/js/37.327b8b90.js"><link rel="prefetch" href="/FannyBlog/assets/js/38.05835afc.js"><link rel="prefetch" href="/FannyBlog/assets/js/39.0f694d10.js"><link rel="prefetch" href="/FannyBlog/assets/js/40.48873395.js"><link rel="prefetch" href="/FannyBlog/assets/js/41.2565bae0.js"><link rel="prefetch" href="/FannyBlog/assets/js/42.23a8359e.js"><link rel="prefetch" href="/FannyBlog/assets/js/43.f49b70ef.js"><link rel="prefetch" href="/FannyBlog/assets/js/44.c5cca5de.js"><link rel="prefetch" href="/FannyBlog/assets/js/45.9bd1d62b.js"><link rel="prefetch" href="/FannyBlog/assets/js/46.92661f23.js"><link rel="prefetch" href="/FannyBlog/assets/js/47.8fef021e.js"><link rel="prefetch" href="/FannyBlog/assets/js/48.b674f944.js"><link rel="prefetch" href="/FannyBlog/assets/js/49.7f392eeb.js"><link rel="prefetch" href="/FannyBlog/assets/js/5.01c595b2.js"><link rel="prefetch" href="/FannyBlog/assets/js/50.e6f0a438.js"><link rel="prefetch" href="/FannyBlog/assets/js/51.9f4e10f8.js"><link rel="prefetch" href="/FannyBlog/assets/js/6.7e5fbea0.js"><link rel="prefetch" href="/FannyBlog/assets/js/7.bbd61191.js"><link rel="prefetch" href="/FannyBlog/assets/js/8.f6b71c91.js"><link rel="prefetch" href="/FannyBlog/assets/js/9.08ba69c0.js"><link rel="prefetch" href="/FannyBlog/assets/js/vuejs-paginate.6d4c3ca3.js">
+    <link rel="stylesheet" href="/FannyBlog/assets/css/0.styles.21529ff0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-blog__global-layout"><section id="header-wrapper"><header id="header"><div class="header-wrapper"><div class="title"><a href="/FannyBlog/" class="nav-link home-link">Fanny </a></div> <div class="header-right-wrap"><ul class="nav"><li class="nav-item"><a href="/FannyBlog/" class="nav-link">Blog</a></li><li class="nav-item"><a href="/FannyBlog/tag/" class="nav-link">Tags</a></li><li class="nav-item"><a href="https://github.com/FiggerDancer" target="_blank" rel="noopener noreferrer" class="nav-link external">Github</a></li></ul> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></div></header></section> <div id="mobile-header"><div class="mobile-header-bar"><div class="mobile-header-title"><a href="/FannyBlog/" class="nav-link mobile-home-link">Fanny </a> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div> <div class="mobile-menu-wrapper"><hr class="menu-divider"> <ul class="mobile-nav"><li class="mobile-nav-item"><a href="/FannyBlog/" class="nav-link">Blog</a></li><li class="mobile-nav-item"><a href="/FannyBlog/tag/" class="nav-link">Tags</a></li><li class="mobile-nav-item"><a href="https://github.com/FiggerDancer" target="_blank" rel="noopener noreferrer" class="nav-link external">Github</a></li> <li class="mobile-nav-item"><!----></li></ul></div></div></div> <div class="content-wrapper"><div id="vuepress-theme-blog__post-layout"><article itemscope="itemscope" itemtype="https://schema.org/BlogPosting" class="vuepress-blog-theme-content"><header><h1 itemprop="name headline" class="post-title">
+        ES10新特性
+      </h1> <div class="post-meta"><!----> <div class="post-meta-date"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <time pubdate itemprop="datePublished" datetime="2019-03-18T09:45:57.000Z">
+      2019-03-18
+    </time></div> <ul itemprop="keywords" class="post-meta-tags"><li class="post-tag" data-v-42ccfcd5><a href="/FannyBlog/tag/ECMAScript" data-v-42ccfcd5><span data-v-42ccfcd5>ECMAScript</span></a></li><li class="post-tag" data-v-42ccfcd5><a href="/FannyBlog/tag/JS" data-v-42ccfcd5><span data-v-42ccfcd5>JS</span></a></li></ul></div></header> <div itemprop="articleBody" class="content__default"><p><em>ES10 还只是一个草案。但是除了 Object.fromEntries 之外，Chrome 的大多数功能都已经实现了。在新的语言特性方面，ES10 不如 ES6 重要，但它确实添加了一些有趣的特性。让我们一起来看一下具体有哪些特性吧。</em></p> <h1 id="es10新特性"><a href="#es10新特性" class="header-anchor">#</a> ES10新特性</h1> <ul><li>String.matchAll()</li> <li>Dynamic import()</li> <li>Array.flat().flatMap()</li> <li>Object.fromEntries()</li> <li>String.trimStart().trimEnd()</li> <li>well-formed JSON.stringify()</li> <li>stable Array.sort()</li> <li>new Function.toString()</li> <li>Standardized globalThis object</li></ul> <h2 id="_1-bigint-任意精度整数"><a href="#_1-bigint-任意精度整数" class="header-anchor">#</a> 1. BigInt -任意精度整数</h2> <h2 id="_1-1-bigint-是第七种-原始类型。"><a href="#_1-1-bigint-是第七种-原始类型。" class="header-anchor">#</a> 1.1 BigInt 是第七种 原始类型。</h2> <p>BigInt 是一个任意精度的整数。这意味着变量现在可以 <font color="#F39C12">$表示^{253}$</font> 数字，而不仅仅是 <font color="#F39C12">9007199254740992</font>。
+const b = 1n; // 追加 n 以创建 BigInt
+在过去，不支持大于 <font color="#F39C12">9007199254740992</font> 的整数值。如果超过，该值将锁定为 <font color="#F39C12">MAX_SAFE_INTEGER + 1</font>:</p> <div class="language- extra-class"><pre class="language-text"><code>const limit = Number.MAX_SAFE_INTEGER; 
+⇨ 9007199254740991
+limit + 1;
+⇨ 9007199254740992
+limit + 2;
+⇨ 9007199254740992 &lt;--- MAX_SAFE_INTEGER + 1 exceeded
+const larger = 9007199254740991n;
+⇨ 9007199254740991n
+const integer = BigInt(9007199254740991); // initialize with number
+⇨ 9007199254740991n
+const same = BigInt(&quot;9007199254740991&quot;); // initialize with &quot;string&quot;
+⇨ 9007199254740991n
+</code></pre></div><h2 id="_1-2-typeof"><a href="#_1-2-typeof" class="header-anchor">#</a> 1.2 typeof</h2> <div class="language- extra-class"><pre class="language-text"><code>typeof 10;
+⇨ 'number'
+typeof 10n;
+⇨ 'bigint'
+</code></pre></div><h2 id="_1-3-等于运算符可用于两种类型之间比较"><a href="#_1-3-等于运算符可用于两种类型之间比较" class="header-anchor">#</a> 1.3 等于运算符可用于两种类型之间比较：</h2> <div class="language- extra-class"><pre class="language-text"><code>10n === BigInt(10);
+⇨ true
+10n == 10;
+⇨ true
+</code></pre></div><h2 id="_1-4-数学运算符只能在自己的类型中工作"><a href="#_1-4-数学运算符只能在自己的类型中工作" class="header-anchor">#</a> 1.4 数学运算符只能在自己的类型中工作:</h2> <div class="language- extra-class"><pre class="language-text"><code>200n / 10n
+⇨ 20n
+200n / 20
+⇨ Uncaught TypeError:
+Cannotmix BigInt and other types, use explicit conversions &lt;
+</code></pre></div><h2 id="_1-5-运算符可以操作-不可用"><a href="#_1-5-运算符可以操作-不可用" class="header-anchor">#</a> 1.5 运算符可以操作，+不可用</h2> <div class="language- extra-class"><pre class="language-text"><code>-100n
+⇨ -100n
++100n
+⇨ Uncaught TypeError:
+Cannot convert a BigInt value to a number
+</code></pre></div><h1 id="_2-string-matchall"><a href="#_2-string-matchall" class="header-anchor">#</a> 2.String.matchAll()</h1> <p>matchAll 可能已经在 Chrome C73 中正式实现了——如果不是，它仍然值得一看。特别是如果你是一个正则表达式(regex)爱好者。</p> <h2 id="_2-1-string-prototype-matchall"><a href="#_2-1-string-prototype-matchall" class="header-anchor">#</a> 2.1 string.prototype.matchAll()</h2> <p>如果您运行谷歌搜索JavaScript string match all，第一个结果将是这样的：如何编写正则表达式“match all”？</p> <p>最佳结果将建议 String.match 与正则表达式和 /g 一起使用或者带有 /g 的 RegExp.exec 或者带有 /g 的 RegExp.test。</p> <p>首先，让我们看看旧规范是如何工作的。</p> <p>带字符串参数的 String.match 仅返回第一个匹配：</p> <div class="language- extra-class"><pre class="language-text"><code>let string = 'Hello';
+let matches = string.match('1');
+console.log(matches[0]); // &quot;l&quot;
+</code></pre></div><p>结果是单个 &quot;l&quot;（注意：匹配存储在 matches[0] 中而不是 matches）</p> <p>在“hello”中搜索 &quot;l&quot; 只返回 &quot;l&quot;。</p> <p>将 string.match 与 regex 参数一起使用也是如此：</p> <p>让我们使用正则表达式 /l/ 找到字符 串“hello” 中的 “l” 字符：</p> <div class="language- extra-class"><pre class="language-text"><code>let string = &quot;Hello&quot;;
+let matches = string.match(/l/);
+console.log(matches[0]); // &quot;l&quot;
+</code></pre></div><h2 id="_2-2-添加-g-混合"><a href="#_2-2-添加-g-混合" class="header-anchor">#</a> 2.2 添加 /g 混合</h2> <div class="language- extra-class"><pre class="language-text"><code>let string = &quot;Hello&quot;;
+let ret = string.match(/l/g); // (2) [“l”, “l”];
+</code></pre></div><p>很好，我们使用 &lt; ES10 方式得到了多个匹配，它一直起作用。</p> <p>那么为什么要使用全新的 matchAll 方法呢? 在我们更详细地回答这个问题之前，让我们先来看看 捕获组。如果不出意外，你可能会学到一些关于正则表达式的新知识。</p> <h2 id="_2-3-正则表达式捕获组"><a href="#_2-3-正则表达式捕获组" class="header-anchor">#</a> 2.3 正则表达式捕获组</h2> <p>在 regex 中捕获组只是从 () 括号中提取一个模式，可以使用 <strong>/regex/.exec(string)</strong> 和 <strong>string.match</strong> 捕捉组。</p> <p>常规捕获组是通过将模式包装在 <strong>(pattern)</strong> 中创建的，但是要在结果对象上创建 <font color="#F39C12">groups</font> 属性，它是: <font color="#F39C12">(?&lt;name&gt;pattern)</font>。</p> <p>要创建一个新的组名，只需在括号内附加 <strong>?&lt;name&gt;</strong>，结果中，分组 (pattern) 匹配将成为 <strong>group.name</strong>，并附加到 <strong>match</strong> 对象，以下是一个实例：</p> <p>字符串标本匹配：
+black*raven lime*parrot white*seagull</p> <p>这里创建了 match.groups.<strong>color</strong> 和 match.groups.<strong>bird</strong> ：</p> <div class="language- extra-class"><pre class="language-text"><code>const string = 'black*raven lime*parrot white*seagull';
+const regex = /(?&lt;color&gt;.*?)\*(?&lt;bird&gt;[a-z0-9]+)/g;
+while (match = regex.exec(string))
+{
+  let value = match[0];
+  let index = match.index;
+  let input = match.input;
+  console.log(`${value} at ${index} with '${input}'`);
+  console.log(match.groups.color);
+  console.log(match.groups.bird);
+}
+</code></pre></div><p>需要多次调用 regex.exec 方法来遍历整个搜索结果集。 在每次迭代期间调用 .exec 时，将显示下一个结果（它不会立即返回所有匹配项。），因此使用 while 循环。</p> <p>输出如下：</p> <div class="language- extra-class"><pre class="language-text"><code>black*raven at 0 with 'black*raven lime*parrot white*seagull'
+black
+raven
+lime*parrot at 11 with 'black*raven lime*parrot white*seagull'
+lime
+parrot
+white*seagull at 23 with 'black*raven lime*parrot white*seagull'
+white
+seagull
+</code></pre></div><p><strong>但奇怪的是:</strong> <font color="#2980B9"><em>如果你从这个正则表达式中删除 /g，你将永远在第一个结果上创建一个无限循环。这在过去是一个巨大的痛苦。想象一下，从某个数据库接收正则表达式时，你不确定它的末尾是否有 /g，你得先检查一下。</em></font></p> <h2 id="_2-4-使用-matchall-的好理由"><a href="#_2-4-使用-matchall-的好理由" class="header-anchor">#</a> 2.4 使用 .matchAll() 的好理由</h2> <ol><li><p>在与捕获组一起使用时，它可以 <strong>更加优雅</strong>,捕获组只是使用 () 提取模式的正则表达式的一部分。</p></li> <li><p>它 <strong>返回一个迭代器而</strong> 不是一个数组，迭代器本身是有用的。</p></li> <li><p>迭代器可以使用扩展运算符 (…) 转换为数组。</p></li> <li><p>它避免了带有 <strong>/g</strong> 标志的正则表达式，当从数据库或外部源检索未知正则表达式并与陈旧的 <strong>RegEx</strong> 对象一起使用时，它非常有用。</p></li> <li><p>使用 <strong>RegEx</strong> 对象创建的正则表达式不能使用点 <strong>(.)</strong> 操作符链接。</p></li> <li><p>高级: <strong>RegEx</strong> 对象更改跟踪最后匹配位置的内部 <strong>.lastindex</strong> 属性，这在复杂的情况下会造成严重破坏。</p></li></ol> <h2 id="_2-5-matchall-是如何工作的"><a href="#_2-5-matchall-是如何工作的" class="header-anchor">#</a> 2.5 .matchAll() 是如何工作的</h2> <p>让我们尝试匹配单词 hello 中字母 e 和 l 的所有实例， 因为返回了迭代器，所以可以使用 <strong>for…of</strong> 循环遍历它：</p> <div class="language- extra-class"><pre class="language-text"><code>// Match all occurrences of the letters: &quot;e&quot; or &quot;l&quot; 
+let iterator = &quot;hello&quot;.matchAll(/[el]/);
+for (const match of iterator)
+  console.log(match);
+</code></pre></div><p>这一次你可以跳过 <strong>/g</strong>， .matchall 方法不需要它，结果如下:</p> <div class="language- extra-class"><pre class="language-text"><code>[ 'e', index: 1, input: 'hello' ] // Iteration 1
+[ 'l', index: 2, input: 'hello' ] // Iteration 2
+[ 'l', index: 3, input: 'hello' ] // Iteration 3
+</code></pre></div><h2 id="_2-6-使用-matchall-捕获组示例"><a href="#_2-6-使用-matchall-捕获组示例" class="header-anchor">#</a> 2.6 使用 .matchAll() 捕获组示例：</h2> <p><strong>.matchAll</strong>  具有上面列出的所有好处。它是一个迭代器，可以用 <strong>for…of</strong> 循环遍历它,这就是整个语法的不同。</p> <div class="language- extra-class"><pre class="language-text"><code>const string = 'black*raven lime*parrot white*seagull';
+const regex = /(?&lt;color&gt;.*?)\*(?&lt;bird&gt;[a-z0-9]+)/;
+for (const match of string.matchAll(regex)) {
+  let value = match[0];
+  let index = match.index;
+  let input = match.input;
+  console.log(`${value} at ${index} with '${input}'`);
+  console.log(match.groups.color);
+  console.log(match.groups.bird);
+}
+</code></pre></div><p>请注意已经没有 <strong>/g</strong> 标志，因为 <strong>.matchAll()</strong> 已经包含了它，打印如下：</p> <div class="language- extra-class"><pre class="language-text"><code>black*raven at 0 with 'black*raven lime*parrot white*seagull'
+black
+raven
+lime*parrot at 11 with 'black*raven lime*parrot white*seagull'
+lime
+parrot
+white*seagull at 23 with 'black*raven lime*parrot white*seagull'
+white
+seagull
+</code></pre></div><p>也许在美学上它与原始正则表达式非常相似，执行while循环实现。但是如前所述，由于上面提到的许多原因，这是更好的方法，移除 <strong>/g</strong> 不会导致无限循环。</p> <h1 id="_3-动态导入"><a href="#_3-动态导入" class="header-anchor">#</a> 3. 动态导入</h1> <p>现在可以将导入分配给变量：</p> <div class="language- extra-class"><pre class="language-text"><code>element.addEventListener('click', async() =&gt; {
+  const module = await import(`./api-scripts/button-click.js`);
+  module.clickEvent();
+})
+</code></pre></div><h1 id="_4-array-flat-array-flatmap"><a href="#_4-array-flat-array-flatmap" class="header-anchor">#</a> 4. Array.flat() &amp; Array.flatMap()</h1> <h2 id="_4-1-array-flat"><a href="#_4-1-array-flat" class="header-anchor">#</a> 4.1 Array.flat()</h2> <p>扁平化多维数组：</p> <div class="language- extra-class"><pre class="language-text"><code>let multi = [1,2,3,[4,5,6,[7,8,9,[10,11,12]]]];
+multi.flat();               // [1,2,3,4,5,6,Array(4)]
+multi.flat().flat();        // [1,2,3,4,5,6,7,8,9,Array(3)]
+multi.flat().flat().flat(); // [1,2,3,4,5,6,7,8,9,10,11,12]
+multi.flat(Infinity);       // [1,2,3,4,5,6,7,8,9,10,11,12]
+</code></pre></div><h2 id="_4-2-array-flatmap"><a href="#_4-2-array-flatmap" class="header-anchor">#</a> 4.2 Array.flatMap()</h2> <div class="language- extra-class"><pre class="language-text"><code>let array = [1, 2, 3, 4, 5];
+array.map(x =&gt; [x, x * 2]);
+
+let array = [1, 2, 3, 4, 5];
+array.map(x =&gt; [x, x * 2]);
+</code></pre></div><p>结果：</p> <div class="language- extra-class"><pre class="language-text"><code>[Array(2),Array(2),Array(2),Array(2),Array(2)]
+0: (2) [1, 2]
+1: (2) [2, 4]
+2: (2) [3, 6]
+3: (2) [4, 8]
+4: (2) [5, 10]
+</code></pre></div><p>使用 flatMap 方法：</p> <div class="language- extra-class"><pre class="language-text"><code>array.flatMap(v =&gt; [v, v * 2]);
+[1, 2, 2, 4, 3, 6, 4, 8, 5, 10]
+</code></pre></div><h1 id="_5-object-fromentries"><a href="#_5-object-fromentries" class="header-anchor">#</a> 5. Object.fromEntries()</h1> <p>将键值对列表转换为对象:</p> <div class="language- extra-class"><pre class="language-text"><code>let obj = { apple : 10, orange : 20, banana : 30 };
+let entries = Object.entries(obj);
+entries;
+(3) [Array(2), Array(2), Array(2)]
+0: (2) [&quot;apple&quot;, 10]
+1: (2) [&quot;orange&quot;, 20]
+2: (2) [&quot;banana&quot;, 30]
+let fromEntries = Object.fromEntries(entries);
+{ apple: 10, orange: 20, banana: 30 }
+</code></pre></div><h1 id="_6-string-trimstart-与-string-trimend"><a href="#_6-string-trimstart-与-string-trimend" class="header-anchor">#</a> 6. String.trimStart() 与 String.trimEnd()</h1> <div class="language- extra-class"><pre class="language-text"><code>let greeting = &quot;     Space around     &quot;;
+greeting.trimEnd();   // &quot;     Space around&quot;;
+greeting.trimStart(); // &quot;Space around     &quot;;
+</code></pre></div><h1 id="_7-格式良好的-json-stringify"><a href="#_7-格式良好的-json-stringify" class="header-anchor">#</a> 7. 格式良好的 JSON.stringify()</h1> <p>此更新修复了字符 <strong>U+D800</strong> 到 <strong>U+DFFF</strong> 的处理，有时可以进入 JSON 字符串。 这可能是一个问题，因为 <strong>JSON.stringify</strong> 可能会将这些数字格式化为没有等效 UTF-8 字符的值, 但 JSON 格式需要 UTF-8 编码。</p> <p>解析方法使用格式良好的JSON字符串，如:</p> <div class="language- extra-class"><pre class="language-text"><code>'{ “prop1” : 1, &quot;prop2&quot; : 2 }'; // A well-formed JSON format string
+</code></pre></div><p>注意，要创建正确 JSON 格式的字符串，绝对需要在属性名周围加上双引号。缺少或任何其他类型的引号都不会生成格式良好的JSON。</p> <div class="language- extra-class"><pre class="language-text"><code>'{ “prop1” : 1, &quot;meth&quot; : () =&gt; {}}'; // Not JSON format string
+</code></pre></div><p>JSON 字符串格式与 Object Literal 不同，后者看起来几乎一样，但可以使用任何类型的引号括住属性名，也可以包含方法(JSON格式不允许使用方法):</p> <div class="language- extra-class"><pre class="language-text"><code>let object_literal={ property: 1, meth:()=&gt; {}};
+</code></pre></div><p>不管怎样，一切似乎都很好。第一个示例看起来是兼容的。但它们也是简单的例子，大多数情况下都能顺利地工作!</p> <h1 id="_8-稳定的-array-prototype-sort"><a href="#_8-稳定的-array-prototype-sort" class="header-anchor">#</a> 8. 稳定的 Array.prototype.sort()</h1> <p><strong>V8</strong> 之前的实现对包含10个以上项的数组使用了一种 <strong>不稳定</strong> 的快速排序算法。</p> <p><font color="#2980B9"><em>一个稳定的排序算法是当两个键值相等的对象在排序后的输出中出现的顺序与在未排序的输入中出现的顺序相同时。</em></font></p> <p>但情况不再是这样了，ES10 提供了一个稳定的数组排序:</p> <div class="language- extra-class"><pre class="language-text"><code>var fruit = [
+  { name: &quot;Apple&quot;,      count: 13, },
+  { name: &quot;Pear&quot;,       count: 12, },
+  { name: &quot;Banana&quot;,     count: 12, },
+  { name: &quot;Strawberry&quot;, count: 11, },
+  { name: &quot;Cherry&quot;,     count: 11, },
+  { name: &quot;Blackberry&quot;, count: 10, },
+  { name: &quot;Pineapple&quot;,  count: 10, }
+];
+// 创建排序函数:
+let my_sort = (a, b) =&gt; a.count - b.count;
+// 执行稳定的ES10排序:
+let sorted = fruit.sort(my_sort);
+console.log(sorted);
+</code></pre></div><h1 id="_9-新的function-tostring"><a href="#_9-新的function-tostring" class="header-anchor">#</a> 9. 新的Function.toString()</h1> <p>函数是对象，并且每个对象都有一个 <strong>.toString()</strong> 方法，因为它最初存在于 <strong>Object.prototype.toString()</strong> 上。所有对象（包括函数）都是通过基于原型的类继承从它继承的。</p> <p>这意味着我们以前已经有 <strong>function.toString()</strong> 方法</p> <p>但是 ES10 进一步尝试标准化所有对象和内置函数的字符串表示。以下是各种新案例：</p> <p><strong>典型的例子：</strong></p> <div class="language- extra-class"><pre class="language-text"><code>function(){console.log('Hello there.')}.toString();
+</code></pre></div><p><strong>控制台输出（函数体的字符串格式：）</strong>
+⇨ function () { console.log('Hello there.'); }</p> <p>下面是剩下的例子：</p> <p><strong>直接在方法名 .toString()</strong></p> <div class="language- extra-class"><pre class="language-text"><code>Number.parseInt.toString();
+⇨ function parseInt() { [native code] }
+</code></pre></div><p><strong>绑定上下文:</strong></p> <div class="language- extra-class"><pre class="language-text"><code>function () { }.bind(0).toString();
+⇨ function () { [native code] }
+</code></pre></div><p><strong>内置可调用函数对象:</strong></p> <div class="language- extra-class"><pre class="language-text"><code>Symbol.toString();
+⇨ function Symbol() { [native code] }
+</code></pre></div><p><strong>动态生成的函数:</strong></p> <div class="language- extra-class"><pre class="language-text"><code>function* () { }.toString();
+⇨ function* () { }
+</code></pre></div><p><strong>prototype.toString</strong></p> <div class="language- extra-class"><pre class="language-text"><code>Function.prototype.toString.call({});
+⇨ Function.prototype.toString requires that 'this' be a Function&quot;
+</code></pre></div><h1 id="_10-可选的-catch-binding"><a href="#_10-可选的-catch-binding" class="header-anchor">#</a> 10. 可选的 Catch Binding</h1> <p>在过去，<strong>try/catch</strong> 语句中的 <strong>catch</strong> 语句需要一个变量。 <strong>try/catch</strong> 语句帮助捕获终端级别的错误:</p> <div class="language- extra-class"><pre class="language-text"><code>try {
+  // Call a non-existing function undefined_Function
+  undefined_Function(&quot;I'm trying&quot;);
+}
+catch(error) {
+  // Display the error if statements inside try above fail
+  console.log( error ); // undefined_Function is undefined
+}
+</code></pre></div><p>在某些情况下，所需的<strong>错误</strong>变量是未使用的:</p> <div class="language- extra-class"><pre class="language-text"><code>try {
+  JSON.parse(text); // &lt;--- this will fail with &quot;text not defined&quot;
+  return true; &lt;--- exit without error even if there is one
+}
+catch (redundant_sometmes) &lt;--- this makes error variable redundant
+{
+  return false;
+}
+</code></pre></div><p>编写此代码的人通过尝试强制 <font color="#F39C12">true</font> 退出 <strong>try</strong> 子句。但是，这并不是实际发生的情况</p> <div class="language- extra-class"><pre class="language-text"><code>(() =&gt; {
+    try {
+        JSON.parse(text)
+        return true
+    } catch(err) {
+        return false
+    }
+})()
+=&gt; false
+</code></pre></div><p><strong>在 ES10 中，捕获错误的变量是可选的</strong></p> <p>现在可以跳过错误变量:</p> <div class="language- extra-class"><pre class="language-text"><code>try {
+    JSON.parse(text);
+    return true;
+}
+catch
+{
+    return false;
+}
+</code></pre></div><p>目前还无法测试上一个示例中的 <strong>try</strong> 语句的结果，但一旦它出来，我将更新这部分。</p> <h1 id="_11-标准化-globalthis-对象"><a href="#_11-标准化-globalthis-对象" class="header-anchor">#</a> 11. 标准化 globalThis 对象</h1> <p>这在ES10之前， globalThis 还没有标准化。</p> <p>在产品代码中，你可以自己编写这个怪物，在多个平台上“标准化”它:</p> <div class="language- extra-class"><pre class="language-text"><code>var getGlobal = function () {
+  if (typeof self !== 'undefined') { return self; }
+  if (typeof window !== 'undefined') { return window; }
+  if (typeof global !== 'undefined') { return global; }
+  throw new Error('unable to locate global object');
+};
+</code></pre></div><p>但即使这样也不总是奏效。因此，ES10 添加了 <strong>globalThis</strong> 对象，从现在开始，该对象用于在任何平台上访问全局作用域:</p> <div class="language- extra-class"><pre class="language-text"><code>// 访问全局数组构造函数
+globalThis.Array(0, 1, 2);
+⇨ [0, 1, 2]
+
+// 类似于 ES5 之前的 window.v = { flag: true }
+globalThis.v = { flag: true };
+
+console.log(globalThis.v);
+⇨ { flag: true }
+</code></pre></div><h1 id="_12-symbol-description"><a href="#_12-symbol-description" class="header-anchor">#</a> 12. Symbol.description</h1> <p><font color="#F39C12">description</font> 是一个只读属性，它返回 <strong>Symbol</strong> 对象的可选描述。</p> <div class="language- extra-class"><pre class="language-text"><code>let mySymbol = 'My Symbol';
+let symObj = Symbol(mySymbol);
+symObj; // Symbol(My Symbol)
+symObj.description; // &quot;My Symbol&quot;
+</code></pre></div><h1 id="_13-hashbang-语法"><a href="#_13-hashbang-语法" class="header-anchor">#</a> 13. Hashbang  语法</h1> <p>也就是 unix 用户熟悉的 <strong>shebang</strong>。它指定一个解释器(什么将执行JavaScript文件?)。</p> <p>ES10标准化，我不会对此进行详细介绍，因为从技术上讲，这并不是一个真正的语言特性，但它基本上统一了 JavaScript 在服务器端的执行方式。</p> <div class="language- extra-class"><pre class="language-text"><code>$ ./index.js
+</code></pre></div><p>代替</p> <div class="language- extra-class"><pre class="language-text"><code>$ node index.js
+</code></pre></div><h1 id="_14-es10类-private、static-和-公共成员"><a href="#_14-es10类-private、static-和-公共成员" class="header-anchor">#</a> 14. ES10类:private、static 和 公共成员</h1> <p><strong>新的语法字符 #octothorpe（hash tag）现在用于直接在类主体的范围内定义变量，函数，getter 和 setter ......以及构造函数和类方法。</strong></p> <p>下面是一个毫无意义的例子，它只关注新语法:</p> <div class="language- extra-class"><pre class="language-text"><code>class Raven extends Bird {
+    #state = { eggs: 10};
+    // getter
+    get #eggs() { 
+        return state.eggs;
+    }
+    // setter
+    set #eggs(value) {
+        this.#state.eggs = value;
+    }
+    #lay() {
+        this.#eggs++;
+    }
+    constructor() {
+        super();
+        this.#lay.bind(this);
+    }
+    #render() {
+        /* paint UI */
+    }
+}
+</code></pre></div><p>老实说，我认为这会让语言更难读。</p></div> <footer><!----> <hr> <!----></footer></article> <div class="sticker vuepress-toc"><div class="vuepress-toc-item vuepress-toc-h2 active"><a href="#_1-bigint-任意精度整数" title="1. BigInt -任意精度整数">1. BigInt -任意精度整数</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#_1-1-bigint-是第七种-原始类型。" title="1.1 BigInt 是第七种 原始类型。">1.1 BigInt 是第七种 原始类型。</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#_1-2-typeof" title="1.2 typeof">1.2 typeof</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#_1-3-等于运算符可用于两种类型之间比较" title="1.3 等于运算符可用于两种类型之间比较：">1.3 等于运算符可用于两种类型之间比较：</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#_1-4-数学运算符只能在自己的类型中工作" title="1.4 数学运算符只能在自己的类型中工作:">1.4 数学运算符只能在自己的类型中工作:</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#_1-5-运算符可以操作-不可用" title="1.5 运算符可以操作，+不可用">1.5 运算符可以操作，+不可用</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#_2-1-string-prototype-matchall" title="2.1 string.prototype.matchAll()">2.1 string.prototype.matchAll()</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#_2-2-添加-g-混合" title="2.2 添加 /g 混合">2.2 添加 /g 混合</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#_2-3-正则表达式捕获组" title="2.3 正则表达式捕获组">2.3 正则表达式捕获组</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#_2-4-使用-matchall-的好理由" title="2.4 使用 .matchAll() 的好理由">2.4 使用 .matchAll() 的好理由</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#_2-5-matchall-是如何工作的" title="2.5 .matchAll() 是如何工作的">2.5 .matchAll() 是如何工作的</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#_2-6-使用-matchall-捕获组示例" title="2.6 使用 .matchAll() 捕获组示例：">2.6 使用 .matchAll() 捕获组示例：</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#_4-1-array-flat" title="4.1 Array.flat()">4.1 Array.flat()</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#_4-2-array-flatmap" title="4.2 Array.flatMap()">4.2 Array.flatMap()</a></div></div></div></div> <footer class="footer" data-v-3d9deeb8><div class="footer-left-wrap" data-v-3d9deeb8><ul class="contact" data-v-3d9deeb8><li class="contact-item" data-v-3d9deeb8><a href="https://github.com/FiggerDancer" target="_blank" rel="noopener noreferrer" class="nav-link external" data-v-3d9deeb8><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github" data-v-3d9deeb8><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" data-v-3d9deeb8></path></svg>
+          
+        </a></li></ul></div> <div class="footer-right-wrap" data-v-3d9deeb8><ul class="copyright" data-v-3d9deeb8><li class="copyright-item" data-v-3d9deeb8><a href="https://policies.google.com/privacy?hl=en-US" target="_blank" rel="noopener noreferrer" class="nav-link external" data-v-3d9deeb8>Privacy Policy</a></li><li class="copyright-item" data-v-3d9deeb8>Fanny Li © 2019</li></ul></div></footer></div><div class="global-ui"></div></div>
+    <script src="/FannyBlog/assets/js/app.a39f2cab.js" defer></script><script src="/FannyBlog/assets/js/12.2adad98b.js" defer></script><script src="/FannyBlog/assets/js/4.afb47655.js" defer></script><script src="/FannyBlog/assets/js/22.3c8a244d.js" defer></script>
+  </body>
+</html>
